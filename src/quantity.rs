@@ -60,10 +60,21 @@ impl Quantity {
         };
         return Quantity {
             magnitude: self.magnitude + other.magnitude,
-            dimensions: self.dimensions.clone()
+            dimensions: self.dimensions
         }
     }
 
+    /// Check if two quantities are equal to each other
+    /// 
+    /// # Arguments
+    /// 
+    /// * `other` - Other quantity to check for equality with this quantity
+    /// 
+    /// # Return
+    /// 
+    /// * true - quantities are equal
+    /// * false quantities are not equal
+    /// 
     pub fn eq(&self, other: &Quantity) -> bool {
         if !self.same_dimensionality(other) || (self.magnitude != other.magnitude) {
             return false;

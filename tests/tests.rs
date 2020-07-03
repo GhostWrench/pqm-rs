@@ -8,3 +8,11 @@ fn add_quantities() {
     let result = q1.add(&q2);
     assert!(result.eq(&expected));
 }
+
+#[test]
+#[should_panic]
+fn add_unlike() {
+    let q1 = Quantity::new(1.0, [1,0,0,0,0,0,0]);
+    let q2 = Quantity::new(1.0, [0,1,0,0,0,0,0]);
+    let _result = q1.add(&q2);
+}
