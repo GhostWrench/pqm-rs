@@ -1,4 +1,4 @@
-use pqm_rs::quantity::Quantity;
+use pqm_rs::Quantity;
 
 #[test]
 fn add_quantities() {
